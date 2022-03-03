@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+<!--
+          <record id="object0" model="empresa_victoria.empresa_victoria">
+            <field name="name">Object 0</field>
+            <field name="value">0</field>
+          </record>
+
+          <record id="object1" model="empresa_victoria.empresa_victoria">
+            <field name="name">Object 1</field>
+            <field name="value">10</field>
+          </record>
+
+          <record id="object2" model="empresa_victoria.empresa_victoria">
+            <field name="name">Object 2</field>
+            <field name="value">20</field>
+          </record>
+
+          <record id="object3" model="empresa_victoria.empresa_victoria">
+            <field name="name">Object 3</field>
+            <field name="value">30</field>
+          </record>
+
+          <record id="object4" model="empresa_victoria.empresa_victoria">
+            <field name="name">Object 4</field>
+            <field name="value">40</field>
+          </record>
+-->
+
+<record id="object0" model="empresa_victoria.empresa">
+            <field name="name">24500678D</field>
+            <field name="nombre">ConstruccionXML</field>
+            <field name="telefono">666574636</field>
+          </record>
+
+        <record id="object1" model="empresa_victoria.empresa">
+            <field name="name">56500678D</field>
+            <field name="nombre">InformaticaXML</field>
+            <field name="telefono">32445636</field>
+          </record>
+
+        <record id="object2" model="empresa_victoria.empresa">
+            <field name="name">24780678D</field>
+            <field name="nombre">Programacion</field>
+            <field name="telefono">66657456</field>
+          </record>
+    </data>
+</odoo>

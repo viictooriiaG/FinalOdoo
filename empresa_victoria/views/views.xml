@@ -1,0 +1,390 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+<!--
+    <record model="ir.ui.view" id="empresa_victoria.list">
+      <field name="name">empresaVictoria list</field>
+      <field name="model">empresa_victoria.empresa_victoria</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record>
+-->
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="empresa_victoria.action_window">
+      <field name="name">empresaVictoria window</field>
+      <field name="res_model">empresa_victoria.empresa_victoria</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="empresa_victoria.action_server">
+      <field name="name">empresaVictoria server</field>
+      <field name="model_id" ref="model_empresa_victoria_empresa_victoria"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="empresaVictoria" id="empresa_victoria.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="empresa_victoria.menu_1" parent="empresa_victoria.menu_root"/>
+    <menuitem name="Menu 2" id="empresa_victoria.menu_2" parent="empresa_victoria.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="empresa_victoria.menu_1_list" parent="empresa_victoria.menu_1"
+              action="empresa_victoria.action_window"/>
+    <menuitem name="Server to list" id="empresa_victoria" parent="empresa_victoria.menu_2"
+              action="empresa_victoria.action_server"/>
+-->
+
+<!--Empresa -->
+
+ <record model="ir.ui.view" id="empresa_victoria.empresa_list_view">
+      <field name="name">empresa_victoria.empresa.view.tree</field>
+      <field name="model">empresa_victoria.empresa</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="telefono"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="empresa_victoria.empresa_search_view">
+      <field name="name">empresa_victoria.empresa.view.search</field>
+      <field name="model">empresa_victoria.empresa</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="telefono"/>
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    
+    <record model="ir.ui.view" id="empresa_victoria.empresa_form_view">
+      <field name="name">empresa_victoria.empresa.view.form</field>
+      <field name="model">empresa_victoria.empresa</field>
+      <field name="arch" type="xml">
+        <form string="Información empresa">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                DNI <field name="name" placeholder="dni"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombre" placeholder="nombre"/>
+                <field name="telefono"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+<!--trabajador -->
+
+ <record model="ir.ui.view" id="empresa_victoria.trabajador_list_view">
+      <field name="name">empresa_victoria.trabajador.view.tree</field>
+      <field name="model">empresa_victoria.trabajador</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="telefono"/>
+          <field name="fecha_nacimiento"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="empresa_victoria.trabajador_search_view">
+      <field name="name">empresa_victoria.trabajador.view.search</field>
+      <field name="model">empresa_victoria.trabajador</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="nombre"/>
+          <field name="telefono"/>
+          <group>
+            <filter name="group_by_nombre" string="nombre" context="{'gropup_by':'nombre'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    
+    <record model="ir.ui.view" id="empresa_victoria.trabajador_form_view">
+      <field name="name">empresa_victoria.trabajador.view.form</field>
+      <field name="model">empresa_victoria.trabajador</field>
+      <field name="arch" type="xml">
+        <form string="Información trabajador">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                DNI <field name="name" placeholder="dni"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="nombre" placeholder="nombre"/>
+                <field name="telefono"/>
+                <field name="fecha_nacimiento"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+
+
+<!--materiales -->
+
+ <record model="ir.ui.view" id="empresa_victoria.materiales_list_view">
+      <field name="name">empresa_victoria.materiales.view.tree</field>
+      <field name="model">empresa_victoria.materiales</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="producto"/>
+          <field name="descripcion"/>
+          <field name="cantidadv"/>
+          <field name="preciov"/>
+          <field name="totalv"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="empresa_victoria.materiales_search_view">
+      <field name="name">empresa_victoria.materiales.view.search</field>
+      <field name="model">empresa_victoria.materiales</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="producto"/>
+          <field name="descripcion"/>
+          <field name="cantidadv"/>
+          <field name="preciov"/>
+          <field name="totalv"/>
+          <group>
+            <filter name="group_by_producto" string="producto" context="{'gropup_by':'producto'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    
+    <record model="ir.ui.view" id="empresa_victoria.materiales_form_view">
+      <field name="name">empresa_victoria.materiales.view.form</field>
+      <field name="model">empresa_victoria.materiales</field>
+      <field name="arch" type="xml">
+        <form string="Información materiales">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                ID_producto <field name="name" placeholder="ID_producto"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="producto" placeholder="producto"/>
+                <field name="descripcion"/>
+                <field name="cantidadv"/>
+                <field name="preciov"/>
+                <field name="totalv"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+<!--fabricantes -->
+
+ <record model="ir.ui.view" id="empresa_victoria.fabricantes_list_view">
+      <field name="name">empresa_victoria.fabricantes.view.tree</field>
+      <field name="model">empresa_victoria.fabricantes</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="producto"/>
+          <field name="descripcion"/>
+          <field name="cantidadc"/>
+          <field name="precioc"/>
+          <field name="totalc"/>
+        </tree>
+      </field>
+    </record>
+
+<!-- search -->
+
+    <record model="ir.ui.view" id="empresa_victoria.fabricantes_search_view">
+      <field name="name">empresa_victoria.fabricantes.view.search</field>
+      <field name="model">empresa_victoria.fabricantes</field>
+      <field name="arch" type="xml">
+        <search>
+          <field name="name"/>
+          <field name="producto"/>
+          <field name="descripcion"/>
+          <field name="cantidadc"/>
+          <field name="precioc"/>
+          <field name="totalc"/>
+          <group>
+            <filter name="group_by_producto" string="producto" context="{'gropup_by':'producto'}" />
+          </group>
+        </search>
+      </field>
+    </record>
+
+    
+    <!-- form -->
+    
+    <record model="ir.ui.view" id="empresa_victoria.fabricantes_form_view">
+      <field name="name">empresa_victoria.fabricantes.view.form</field>
+      <field name="model">empresa_victoria.fabricantes</field>
+      <field name="arch" type="xml">
+        <form string="Información fabricantes">
+          <sheet>
+            <div class="oe_title">
+              <h1>
+                ID_fabricante <field name="name" placeholder="ID_fabricante"/>
+              </h1>
+            </div>
+            <group>
+              <group>
+                <separator string="Datos"/>
+                <field name="producto" placeholder="producto"/>
+                <field name="descripcion"/>
+                <field name="cantidadc"/>
+                <field name="precioc"/>
+                <field name="totalc"/>
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+
+    </record>
+
+
+    <!-- calendar trabajador -->
+
+    <record model="ir.ui.view" id="empresa_victoria.trabajador_calendar_view">
+      <field name="name">empresa_victoria.trabajador.view.calendar</field>
+      <field name="model">empresa_victoria.trabajador</field>
+      <field name="arch" type="xml">
+        <calendar string="Fecha de nacimiento" date_start="fecha_nacimiento" color="nombre" mode="month">
+          <field name="name"/>
+          <field name="nombre"/>
+        </calendar>
+      </field>
+    </record>
+
+
+    <!-- Definición de menús-->
+
+    <!-- Empresa -->
+
+    <record model="ir.actions.act_window" id="empresa_victoria.empresa_action_window">
+      <field name="name">Empresa</field>
+      <field name="res_model">empresa_victoria.empresa</field>
+    </record>
+
+    <menuitem name="empresa_victoria" id="empresa_victoria.menu_root"/>
+    <menuitem name="empresa" id="empresa_victoria.menu_empresa" parent="empresa_victoria.menu_root"/>
+    <menuitem name="Añadir Empresa" id="empresa_victoria.menu_empresa_list" parent="empresa_victoria.menu_empresa"
+              action="empresa_victoria.empresa_action_window"/>
+
+      <!-- trabajador -->
+
+    <record model="ir.actions.act_window" id="empresa_victoria.trabajador_action_window">
+      <field name="name">trabajador</field>
+      <field name="res_model">empresa_victoria.trabajador</field>
+      <field name="view_mode">tree,form,calendar</field>
+    </record>
+
+    <menuitem name="empresa_victoria" id="empresa_victoria.menu_root"/>
+    <menuitem name="trabajador" id="empresa_victoria.menu_trabajador" parent="empresa_victoria.menu_root"/>
+    <menuitem name="Añadir Trabajador" id="empresa_victoria.menu_trabajador_list" parent="empresa_victoria.menu_trabajador"
+              action="empresa_victoria.trabajador_action_window"/>
+
+
+
+    <!-- Materiales -->
+
+    <record model="ir.actions.act_window" id="empresa_victoria.materiales_action_window">
+      <field name="name">materiales</field>
+      <field name="res_model">empresa_victoria.materiales</field>
+    </record>
+
+    <menuitem name="empresa_victoria" id="empresa_victoria.menu_root"/>
+    <menuitem name="materiales" id="empresa_victoria.menu_materiales" parent="empresa_victoria.menu_root"/>
+    <menuitem name="Añadir Materiales" id="empresa_victoria.menu_materiales_list" parent="empresa_victoria.menu_materiales"
+              action="empresa_victoria.materiales_action_window"/>
+
+    <!-- fabricantes -->
+
+    <record model="ir.actions.act_window" id="empresa_victoria.fabricantes_action_window">
+      <field name="name">fabricantes</field>
+      <field name="res_model">empresa_victoria.fabricantes</field>
+    </record>
+
+    <menuitem name="empresa_victoria" id="empresa_victoria.menu_root"/>
+    <menuitem name="fabricantes" id="empresa_victoria.menu_fabricantes" parent="empresa_victoria.menu_root"/>
+    <menuitem name="Añadir Fabricantes" id="empresa_victoria.menu_fabricantes_list" parent="empresa_victoria.menu_materiales"
+              action="empresa_victoria.fabricantes_action_window"/>
+
+
+    <!-- Icono-->          
+ <menuitem name="empresa_victoria" id="empresa_victoria.menu_root" web_icon="ejercicio,static/description/icon.png" />
+
+
+
+  </data>
+</odoo>

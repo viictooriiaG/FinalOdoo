@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_empresa_victoria_trabajador_usuario,empresa_victoria.trabajador.usuario,model_empresa_victoria_trabajador,empresa_victoria.group_empresa_victoria_usuario,1,0,0,0
+access_empresa_victoria_trabajador_administrador,empresa_victoria.trabajador.administrador,model_empresa_victoria_trabajador,empresa_victoria.group_empresa_victoria_administrador,1,1,1,1_

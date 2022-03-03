@@ -1,0 +1,30 @@
+<odoo>
+    <record id="empresa_victoria.empresa_report" model="ir.actions.report">
+        <field name="name"> Informe de empresas</field>
+        <field name="model">empresa_victoria.empresa</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">empresa_victoria.empresa_report_view</field>
+        <field name="report_file">empresa_victoria.empresa_report</field>
+        <field name="binding_model_id" ref="model_empresa_victoria_empresa"/>
+        <field name="binding_type">report</field>
+
+    </record>
+
+    <template id="empresa_report_view">
+        <t t-call="web.html_container">
+            <!-- muestra datos de la empresa (salta página) -->
+            <t t-call="web.external_layout">
+                <h1>empresas </h1><br />
+                <t t-foreach="docs" t-as="empresa">
+                    <ul>
+                        <li>    dni <span t-field="empresa.name" /></li>
+                        <li>    nombre <span t-field="empresa.nombre" /></li>
+                        <li>    teléfono <span t-field="empresa.telefono" /></li>
+
+                    </ul>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
